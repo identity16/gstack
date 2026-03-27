@@ -110,7 +110,7 @@ gstack은 도구 모음이 아니라 프로세스입니다:
 
 ```bash
 # upstream 리모트 추가 (최초 1회)
-git remote add upstream https://github.com/garrytan/gstack.git
+git remote add upstream https://github.com/identity16/gstack.git
 
 # upstream 변경사항 가져오기
 git fetch upstream
@@ -172,7 +172,7 @@ cd -  # 프로젝트 루트로 복귀
 
 ```bash
 rm -rf ~/.claude/skills/gstack
-git clone https://github.com/garrytan/gstack.git ~/.claude/skills/gstack
+git clone https://github.com/identity16/gstack.git ~/.claude/skills/gstack
 cd ~/.claude/skills/gstack && ./setup
 cd -  # 프로젝트 루트로 복귀
 ```
