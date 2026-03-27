@@ -126,6 +126,7 @@ mv ~/.claude/skills/gstack ~/.claude/skills/gstack-original
 # 2. 이 포크로 설치
 git clone https://github.com/identity16/gstack.git ~/.claude/skills/gstack
 cd ~/.claude/skills/gstack && ./setup
+cd -  # 프로젝트 루트로 복귀
 
 # 3. 정상 동작 확인
 # Claude Code에서 /review, /ship 등 기존 스킬이 동작하는지 확인
@@ -144,6 +145,7 @@ rm -rf .claude/skills/gstack
 cp -Rf ~/.claude/skills/gstack .claude/skills/gstack
 rm -rf .claude/skills/gstack/.git
 cd .claude/skills/gstack && ./setup
+cd -  # 프로젝트 루트로 복귀
 
 # 3. 커밋
 git add .claude/skills/gstack
@@ -157,6 +159,7 @@ git commit -m "chore: switch gstack to identity16 fork"
 rm -rf ~/.codex/skills/gstack
 git clone https://github.com/identity16/gstack.git ~/gstack-fork
 cd ~/gstack-fork && ./setup --host codex
+cd -  # 프로젝트 루트로 복귀
 ```
 
 ### 원본으로 되돌리기
@@ -167,6 +170,7 @@ cd ~/gstack-fork && ./setup --host codex
 rm -rf ~/.claude/skills/gstack
 git clone https://github.com/garrytan/gstack.git ~/.claude/skills/gstack
 cd ~/.claude/skills/gstack && ./setup
+cd -  # 프로젝트 루트로 복귀
 ```
 
 ### 주의사항
