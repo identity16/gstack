@@ -29,15 +29,19 @@
 
 **요구사항:** [Claude Code](https://docs.anthropic.com/en/docs/claude-code), [Git](https://git-scm.com/), [Bun](https://bun.sh/) v1.0+
 
-### Step 1: 머신에 설치
+### 방법 A: 머신 전역 설치 (개인 사용)
 
-Claude Code에서 아래를 붙여넣기:
+모든 프로젝트에서 gstack을 쓰려면 전역 설치. Claude Code에서 아래를 붙여넣기:
 
 > Install gstack: run **`git clone https://github.com/identity16/gstack.git ~/.claude/skills/gstack && cd ~/.claude/skills/gstack && ./setup`** then add a "gstack" section to CLAUDE.md that says to use the /browse skill from gstack for all web browsing, never use mcp\_\_claude-in-chrome\_\_\* tools, and lists the available skills: /office-hours, /plan-ceo-review, /plan-eng-review, /plan-design-review, /design-consultation, /review, /ship, /land-and-deploy, /canary, /benchmark, /browse, /qa, /qa-only, /design-review, /setup-browser-cookies, /setup-deploy, /retro, /investigate, /document-release, /codex, /cso, /autoplan, /careful, /freeze, /guard, /unfreeze, /gstack-upgrade.
 
-### Step 2: 프로젝트에 추가 (선택)
+### 방법 B: 프로젝트에 vendoring (팀 공유용)
+
+팀원들이 전역 설치 없이 gstack을 쓸 수 있도록 프로젝트에 포함:
 
 > Add gstack to this project: run **`cp -Rf ~/.claude/skills/gstack .claude/skills/gstack && rm -rf .claude/skills/gstack/.git && cd .claude/skills/gstack && ./setup`** then add a "gstack" section to this project's CLAUDE.md with the available skills list.
+
+> **⚠️ 중복 주의:** 전역 설치(방법 A)와 프로젝트 설치(방법 B)를 **동시에 사용하면 모든 스킬이 2개씩** 표시됩니다. Claude Code가 `~/.claude/skills/`와 `.claude/skills/`를 둘 다 스캔하면서 중복 제거를 하지 않기 때문입니다. **둘 중 하나만 선택하세요.** 이미 전역 설치가 되어 있다면 프로젝트 vendoring은 불필요합니다.
 
 ### Codex, Gemini CLI, or Cursor
 
