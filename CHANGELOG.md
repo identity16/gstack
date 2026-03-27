@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.12.6.0] - 2026-03-27 — /office-hours Now Creates a Branch for You
+
+Starting `/office-hours` on `main` used to mean your design docs and review history lived on `main` — so when you later created a feature branch, `/ship` couldn't find any review history. Now `/office-hours` automatically creates an `office-hours/<topic>` branch before the session begins, so every design doc, CEO review, eng review, and design review is tracked on the right branch from the start.
+
+### Fixed
+
+- **Auto-branch on `/office-hours` start.** If you're on `main` or `master`, the skill creates an `office-hours/<topic-slug>` feature branch before gathering context. All downstream review history (`/plan-ceo-review`, `/plan-eng-review`, `/ship`) now finds the reviews where it expects them.
+
 ## [0.12.5.0] - 2026-03-26 — Fix Codex Hangs: 30-Minute Waits Are Gone
 
 Three bugs in `/codex` caused 30+ minute hangs with zero output during plan reviews and adversarial checks. All three are fixed.

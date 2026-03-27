@@ -372,7 +372,17 @@ eval "$(~/.claude/skills/gstack/bin/gstack-slug 2>/dev/null)"
    ```
    If design docs exist, list them: "Prior designs for this project: [titles + dates]"
 
-5. **Ask: what's your goal with this?** This is a real question, not a formality. The answer determines everything about how the session runs.
+5. **Ensure a feature branch exists.** Check the current branch:
+   ```bash
+   git rev-parse --abbrev-ref HEAD
+   ```
+   If on `main` or `master`, create a feature branch so that design docs and review history are tracked at the branch level. Derive the branch name from the user's topic — use a short, kebab-case slug (e.g., `office-hours/auth-redesign`, `office-hours/new-onboarding`). If the topic isn't clear yet, use `office-hours/{datetime}` as a placeholder.
+   ```bash
+   git checkout -b office-hours/<topic-slug>
+   ```
+   If already on a feature branch, skip this step.
+
+6. **Ask: what's your goal with this?** This is a real question, not a formality. The answer determines everything about how the session runs.
 
    Via AskUserQuestion, ask:
 
@@ -389,7 +399,7 @@ eval "$(~/.claude/skills/gstack/bin/gstack-slug 2>/dev/null)"
    - Startup, intrapreneurship → **Startup mode** (Phase 2A)
    - Hackathon, open source, research, learning, having fun → **Builder mode** (Phase 2B)
 
-6. **Assess product stage** (only for startup/intrapreneurship modes):
+7. **Assess product stage** (only for startup/intrapreneurship modes):
    - Pre-product (idea stage, no users yet)
    - Has users (people using it, not yet paying)
    - Has paying customers
